@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Axial - Pain Tracking App for iOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --text-primary: #1c1c1e;
+      --text-secondary: #6c6c70;
+      --accent: #007aff;
+      --background: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .logo {
+      position: sticky;
+      top: 50%;
+      transform: translateY(-50%);
+      align-self: flex-start;
+    }
+
+    .logo img {
+      width: 180px;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    .content {
+      max-width: 480px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .store-button img {
+      height: 54px;
+    }
+
+    .links {
+      margin-top: 24px;
+      font-size: 0.95rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 16px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .content {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="logo">
+      <!-- Replace with your logo file -->
+      <img src="logo.png" alt="Your App Name logo" />
+    </div>
+
+    <div class="content">
+      <h1>Axial</h1>
+      <p>
+        Track your Axial Spondyloarthritis (AxSpA) pain levels with ease, learn when it affects you most, and easily
+        share your data with your healthcare provider.
+      </p>
+
+      <!-- Replace the link with your real App Store URL -->
+      <a
+        class="store-button"
+        href="https://apps.apple.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+          alt="Download on the App Store"
+        />
+      </a>
+
+      <div class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

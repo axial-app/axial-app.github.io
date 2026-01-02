@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Axial - Pain Tracking App for iOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --text-primary: #1c1c1e;
+      --text-secondary: #6c6c70;
+      --accent: #007aff;
+      --background: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .logo {
+      position: sticky;
+      top: 50%;
+      transform: translateY(-50%);
+      align-self: flex-start;
+    }
+
+    .logo img {
+      width: 180px;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    .content {
+      max-width: 480px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .store-button img {
+      height: 54px;
+    }
+
+    .links {
+      margin-top: 24px;
+      font-size: 0.95rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 16px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .content {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Your App Name logo" />
+    </div>
+
+    <div class="content">
+      <h1>Privacy Policy</h1>
+      <div class="updated">Last updated: 25/12/2025</div>
+
+      <hr />
+
+      <h2>Overview</h2>
+      <p>
+        Your privacy is a core principle of this app.
+      </p>
+      <p>
+        The app is designed to work entirely offline. All data you enter is stored
+        locally on your device. No personal data is transmitted to external
+        servers, cloud services, or third parties.
+      </p>
+
+      <h2>Data We Collect</h2>
+      <p>
+        The app only collects the information that you explicitly choose to enter,
+        such as:
+      </p>
+      <ul>
+        <li>Health or symptom entries (for example pain scores, notes, timestamps)</li>
+        <li>App preferences and settings</li>
+      </ul>
+
+      <p>The app does not collect:</p>
+      <ul>
+        <li>Personal identifiers such as name, email address, or phone number</li>
+        <li>Location data</li>
+        <li>Device identifiers</li>
+        <li>Usage analytics</li>
+      </ul>
+
+      <h2>How Your Data Is Used</h2>
+      <p>
+        All data is used solely to provide the app's functionality, including:
+      </p>
+      <ul>
+        <li>Displaying your entries</li>
+        <li>Generating charts, patterns, insights, or trends</li>
+        <li>Improving your personal experience within the app</li>
+      </ul>
+
+      <h2>Data Storage</h2>
+      <ul>
+        <li>All data is stored locally on your device using system-provided storage mechanisms</li>
+        <li>No data is backed up to external servers operated by the app developer</li>
+        <li>If you delete the app, all associated data is permanently removed from your device</li>
+      </ul>
+      <p>
+        If your device is backed up using Apple's system services (for example
+        iCloud device backups), your data may be included as part of those backups.
+        This is managed entirely by Apple and subject to Apple's privacy policies.
+      </p>
+
+      <h2>Data Sharing</h2>
+      <ul>
+        <li>The app does not share data with third parties</li>
+        <li>The app does not sell or rent your data</li>
+        <li>The app does not send data to analytics or tracking services</li>
+      </ul>
+      <p>
+        Any data sharing only occurs if you explicitly choose to export or share
+        information using system features.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        The app relies on the security features provided by the operating system,
+        including:
+      </p>
+      <ul>
+        <li>Device encryption</li>
+        <li>App sandboxing</li>
+        <li>System-level authentication (such as Face ID or Touch ID, if enabled)</li>
+      </ul>
+      <p>
+        While no system can guarantee absolute security, reasonable measures are
+        taken to protect your data by keeping it local and isolated to your device.
+      </p>
+
+      <h2>Children’s Privacy</h2>
+      <p>
+        The app does not knowingly collect personal information from children. All
+        data is entered manually by the user and remains on the device.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        This Privacy Policy may be updated from time to time. Any changes will be
+        reflected within the app. Continued use of the app after changes indicates
+        acceptance of the updated policy.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions about this Privacy Policy, you can contact the app
+        developer at:
+        <br /><br />
+        <strong>youremail@example.com</strong>
+      </p>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
