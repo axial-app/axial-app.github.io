@@ -2,111 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Axial - Pain Tracking App for iOS</title>
+  <title>Axial - Terms of Use</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap');
+
     :root {
-      --text-primary: #1c1c1e;
-      --text-secondary: #6c6c70;
-      --accent: #007aff;
-      --background: #ffffff;
+      --ink: #2b2623;
+      --muted: #6b625b;
+      --peach: #f7b48e;
+      --peach-deep: #f2996b;
+      --mint: #9fc5b7;
+      --mint-deep: #7fb3a1;
+      --cream: #fff7f2;
+      --sand: #f3e8e1;
+      --card: #fffdfb;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background: var(--background);
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-family: "Manrope", system-ui, sans-serif;
+      background: radial-gradient(circle at 10% 10%, #fff8f3 0%, var(--cream) 40%, #f5efe9 100%);
+      color: var(--ink);
     }
 
     .container {
-      max-width: 1000px;
-      width: 100%;
-      padding: 32px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 28px 72px;
+      position: relative;
+    }
+
+    .background-shape {
+      position: absolute;
+      top: -120px;
+      right: -140px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(159, 197, 183, 0.25) 0%, rgba(159, 197, 183, 0) 70%);
+      pointer-events: none;
+    }
+
+    .background-shape.secondary {
+      top: auto;
+      bottom: -160px;
+      left: -120px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(247, 180, 142, 0.28) 0%, rgba(247, 180, 142, 0) 70%);
+    }
+
+    .header {
       display: flex;
       align-items: center;
-      gap: 64px;
+      gap: 24px;
+      margin-bottom: 28px;
     }
 
-    .logo {
-      position: sticky;
-      top: 50%;
-      transform: translateY(-50%);
-      align-self: flex-start;
+    .logo-shell {
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
     }
 
-    .logo img {
-      width: 180px;
+    .logo-shell img {
+      width: 100px;
       height: auto;
-      border-radius: 16px;
+      border-radius: 18px;
     }
 
-    .content {
-      max-width: 480px;
+    .title-block {
+      display: grid;
+      gap: 8px;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mint-deep);
+      font-weight: 600;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin: 0 0 16px 0;
+      font-family: "Fraunces", "Georgia", serif;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      margin: 0;
+    }
+
+    .updated {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 24px 70px rgba(85, 64, 52, 0.12);
+    }
+
+    h2 {
+      font-family: "Fraunces", "Georgia", serif;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 16px 0;
     }
 
-    .store-button img {
-      height: 54px;
+    hr {
+      border: none;
+      border-top: 1px solid rgba(43, 38, 35, 0.1);
+      margin: 20px 0 8px;
     }
 
     .links {
       margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
       font-size: 0.95rem;
     }
 
     .links a {
-      color: var(--accent);
+      color: var(--ink);
       text-decoration: none;
-      margin-right: 16px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid rgba(43, 38, 35, 0.2);
+      transition: border-color 200ms ease;
     }
 
     .links a:hover {
-      text-decoration: underline;
+      border-color: rgba(43, 38, 35, 0.7);
     }
 
-    /* Responsive layout */
     @media (max-width: 768px) {
-      .container {
+      .header {
         flex-direction: column;
         text-align: center;
-        gap: 32px;
       }
 
-      .content {
-        max-width: none;
+      .links {
+        justify-content: center;
+      }
+
+      .card {
+        padding: 24px;
       }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <div class="logo">
-      <img src="logo.png" alt="Your App Name logo" />
-    </div>
+    <span class="background-shape"></span>
+    <span class="background-shape secondary"></span>
 
-    <div class="content">
-      <h1>Terms of Use</h1>
-      <div class="updated">Last updated: 25/12/2025</div>
+    <header class="header">
+      <div class="logo-shell">
+        <img src="logo.png" alt="Axial logo" />
+      </div>
+      <div class="title-block">
+        <div class="eyebrow">Axial for iOS</div>
+        <h1>Terms of Use</h1>
+        <div class="updated">Last updated: 25/12/2025</div>
+      </div>
+    </header>
 
-      <hr />
-
+    <section class="card">
       <h2>General</h2>
       <p>
         By using this app, you agree to these Terms of Use. If you do not agree,
@@ -160,7 +232,7 @@
         <a href="index.html">Home</a>
         <a href="privacy.html">Privacy Policy</a>
       </div>
-    </div>
+    </section>
   </main>
 </body>
 </html>

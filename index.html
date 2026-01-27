@@ -6,127 +6,247 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap');
+
     :root {
-      --text-primary: #1c1c1e;
-      --text-secondary: #6c6c70;
-      --accent: #007aff;
-      --background: #ffffff;
+      --ink: #2b2623;
+      --muted: #6b625b;
+      --peach: #f7b48e;
+      --peach-deep: #f2996b;
+      --mint: #9fc5b7;
+      --mint-deep: #7fb3a1;
+      --cream: #fff7f2;
+      --sand: #f3e8e1;
+      --card: #fffdfb;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background: var(--background);
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-family: "Manrope", system-ui, sans-serif;
+      background: radial-gradient(circle at 10% 10%, #fff8f3 0%, var(--cream) 40%, #f5efe9 100%);
+      color: var(--ink);
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       width: 100%;
-      padding: 32px;
-      display: flex;
+      padding: 56px 32px 72px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
       align-items: center;
-      gap: 64px;
+      gap: 48px;
+    }
+
+    .logo-shell {
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: hidden;
+      animation: floatIn 900ms ease-out both;
     }
 
     .logo {
-      position: sticky;
-      top: 50%;
-      transform: translateY(-50%);
-      align-self: flex-start;
-    }
-
-    .logo img {
-      width: 180px;
+      width: 210px;
       height: auto;
-      border-radius: 16px;
+      border-radius: 22px;
+      position: relative;
+      z-index: 1;
     }
 
     .content {
-      max-width: 480px;
+      max-width: 520px;
+      display: grid;
+      gap: 20px;
+      animation: riseIn 900ms ease-out both;
+      animation-delay: 120ms;
+    }
+
+    .eyebrow {
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mint-deep);
+      font-weight: 600;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin: 0 0 16px 0;
+      font-family: "Fraunces", "Georgia", serif;
+      font-size: clamp(2.6rem, 4vw, 3.6rem);
+      margin: 0;
+      line-height: 1.05;
     }
 
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0;
     }
 
-    .store-button img {
-      height: 54px;
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--peach) 0%, var(--peach-deep) 100%);
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(247, 154, 107, 0.35);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(247, 154, 107, 0.4);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(159, 197, 183, 0.2);
+      color: var(--mint-deep);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .pill span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--mint-deep);
     }
 
     .links {
-      margin-top: 24px;
+      margin-top: 8px;
       font-size: 0.95rem;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     .links a {
-      color: var(--accent);
+      color: var(--ink);
       text-decoration: none;
-      margin-right: 16px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid rgba(43, 38, 35, 0.2);
+      transition: border-color 200ms ease;
     }
 
     .links a:hover {
-      text-decoration: underline;
+      border-color: rgba(43, 38, 35, 0.7);
+    }
+
+    .background-shape {
+      position: absolute;
+      top: -120px;
+      right: -140px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(159, 197, 183, 0.25) 0%, rgba(159, 197, 183, 0) 70%);
+      pointer-events: none;
+    }
+
+    .background-shape.secondary {
+      top: auto;
+      bottom: -160px;
+      left: -120px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(247, 180, 142, 0.28) 0%, rgba(247, 180, 142, 0) 70%);
+    }
+
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* Responsive layout */
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
+      .hero {
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 32px;
       }
 
-      .content {
-        max-width: none;
+      .cta-row {
+        justify-content: center;
+      }
+
+      .links {
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <div class="logo">
-      <!-- Replace with your logo file -->
-      <img src="logo.png" alt="Your App Name logo" />
-    </div>
+    <span class="background-shape"></span>
+    <span class="background-shape secondary"></span>
 
-    <div class="content">
-      <h1>Axial</h1>
-      <p>
-        Track your Axial Spondyloarthritis (AxSpA) pain levels with ease, learn when it affects you most, and easily
-        share your data with your healthcare provider.
-      </p>
+    <section class="hero">
+      <div class="content">
+        <div class="pill"><span></span> Gentle tracking, clear insights</div>
+        <div class="eyebrow">Axial for iOS</div>
+        <h1>Pain tracking that feels calm, not clinical.</h1>
+        <p>
+          Axial helps you log AxSpA symptoms with clarity, spot patterns over time, and share meaningful reports
+          with your care team.
+        </p>
 
-      <!-- Replace the link with your real App Store URL -->
-      <a
-        class="store-button"
-        href="https://apps.apple.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-          alt="Download on the App Store"
-        />
-      </a>
+        <div class="cta-row">
+          <a class="primary-button" href="https://apps.apple.com/us/app/axial/id6757277462" target="_blank" rel="noopener noreferrer">
+            Get the app
+          </a>
+        </div>
 
-      <div class="links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+        <div class="links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </div>
       </div>
-    </div>
+
+      <div class="logo-shell">
+        <img class="logo" src="logo.png" alt="Axial logo" />
+      </div>
+    </section>
   </main>
 </body>
 </html>
