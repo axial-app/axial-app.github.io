@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact Axial</title>
+  <title>Axial - Contact Us</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap');
@@ -25,79 +25,13 @@
       font-family: "Manrope", system-ui, sans-serif;
       background: radial-gradient(circle at 10% 10%, #fff8f3 0%, var(--cream) 40%, #f5efe9 100%);
       color: var(--ink);
-      display: grid;
-      place-items: center;
     }
 
     .container {
-      max-width: 760px;
-      width: 100%;
-      padding: 56px 32px 72px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 28px 72px;
       position: relative;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 28px;
-      padding: 36px;
-      box-shadow: 0 24px 60px rgba(43, 38, 35, 0.08);
-      display: grid;
-      gap: 16px;
-    }
-
-    .eyebrow {
-      font-size: 0.9rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--mint-deep);
-      font-weight: 600;
-    }
-
-    h1 {
-      font-family: "Fraunces", "Georgia", serif;
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      margin: 0;
-      line-height: 1.05;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .email {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: linear-gradient(120deg, var(--peach) 0%, var(--peach-deep) 100%);
-      color: var(--ink);
-      font-weight: 600;
-      text-decoration: none;
-      width: fit-content;
-    }
-
-    .links {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .links a {
-      color: var(--ink);
-      text-decoration: none;
-      padding-bottom: 2px;
-      border-bottom: 1px solid rgba(43, 38, 35, 0.2);
-      transition: border-color 200ms ease;
-    }
-
-    .links a:hover {
-      border-color: rgba(43, 38, 35, 0.7);
     }
 
     .background-shape {
@@ -118,6 +52,109 @@
       height: 420px;
       background: radial-gradient(circle, rgba(247, 180, 142, 0.28) 0%, rgba(247, 180, 142, 0) 70%);
     }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .logo-shell {
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .logo-shell img {
+      width: 100px;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    .title-block {
+      display: grid;
+      gap: 8px;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mint-deep);
+      font-weight: 600;
+    }
+
+    h1 {
+      font-family: "Fraunces", "Georgia", serif;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      margin: 0;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 24px 70px rgba(85, 64, 52, 0.12);
+    }
+
+    p {
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 16px 0;
+    }
+
+    .email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--peach) 0%, var(--peach-deep) 100%);
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      margin-top: 4px;
+    }
+
+    .links {
+      margin-top: 24px;
+      font-size: 0.95rem;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      color: var(--ink);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid rgba(43, 38, 35, 0.2);
+      transition: border-color 200ms ease;
+    }
+
+    .links a:hover {
+      border-color: rgba(43, 38, 35, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .links {
+        justify-content: center;
+      }
+
+      .card {
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -125,15 +162,23 @@
     <span class="background-shape"></span>
     <span class="background-shape secondary"></span>
 
+    <header class="header">
+      <div class="logo-shell">
+        <img src="logo.png" alt="Axial logo" />
+      </div>
+      <div class="title-block">
+        <div class="eyebrow">Axial for iOS</div>
+        <h1>Contact Us</h1>
+      </div>
+    </header>
+
     <section class="card">
-      <div class="eyebrow">Contact us</div>
-      <h1>We would love to hear from you.</h1>
       <p>
         For support, feedback, or partnerships, email the Axial team and we will get back to you as soon as possible.
       </p>
       <a class="email" href="mailto:admin@getaxial.app">admin@getaxial.app</a>
       <div class="links">
-        <a href="index.html">Back to home</a>
+        <a href="index.html">Home</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Use</a>
       </div>
