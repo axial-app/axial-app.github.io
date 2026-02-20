@@ -2,14 +2,18 @@
 
 :root {
   --ink: #1f1f1c;
-  --muted: #5f5a52;
-  --bg: #f5f3e7;
-  --bg-deep: #efe9d9;
-  --card: #fffdf7;
-  --border: #e4dcd1;
-  --accent: #00483d;
-  --accent-warm: #e27e49;
-  --shadow-soft: 0 24px 60px rgba(31, 31, 28, 0.12);
+  --muted: #5b5750;
+  --bg: #efece5;
+  --bg-deep: #e6e1d7;
+  --card: #ffffff;
+  --border: #dddddd;
+  --accent: #e25b60;
+  --accent-soft: #f7e3e6;
+  --accent-deep: #e25b60;
+  --warm-tone: #d3a986;
+  --cool-tone: #95a5ba;
+  --highlight-tone: #fcf9f2;
+  --shadow-soft: 0 24px 60px rgba(73, 45, 48, 0.14);
 }
 
 * {
@@ -22,9 +26,9 @@ body {
   font-family: "Manrope", "Helvetica Neue", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 8%, rgba(226, 126, 73, 0.22) 0%, rgba(226, 126, 73, 0) 46%),
-    radial-gradient(circle at 86% 0%, rgba(113, 113, 172, 0.22) 0%, rgba(113, 113, 172, 0) 48%),
-    linear-gradient(180deg, #faf6ec 0%, var(--bg) 55%, var(--bg-deep) 100%);
+    radial-gradient(circle at 14% 6%, rgba(211, 169, 134, 0.34) 0%, rgba(211, 169, 134, 0) 48%),
+    radial-gradient(circle at 84% 0%, rgba(149, 165, 186, 0.32) 0%, rgba(149, 165, 186, 0) 52%),
+    linear-gradient(180deg, var(--highlight-tone) 0%, var(--bg) 52%, var(--bg-deep) 100%);
 }
 
 a {
@@ -34,7 +38,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid rgba(0, 72, 61, 0.35);
+  outline: 2px solid rgba(226, 91, 96, 0.55);
   outline-offset: 3px;
 }
 
@@ -63,7 +67,6 @@ button:focus-visible {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  box-shadow: 0 12px 28px rgba(0, 72, 61, 0.18);
   background: var(--card);
 }
 
@@ -71,6 +74,7 @@ button:focus-visible {
   font-family: "Fraunces", "Georgia", serif;
   font-size: 1.4rem;
   letter-spacing: 0.02em;
+  color: #000;
 }
 
 .nav-links {
@@ -222,12 +226,12 @@ footer {
   gap: 8px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--accent-deep);
   color: #fff;
   font-weight: 600;
   border: 1px solid transparent;
   transition: transform 200ms ease, box-shadow 200ms ease;
-  box-shadow: 0 14px 24px rgba(0, 72, 61, 0.2);
+  box-shadow: 0 14px 24px rgba(226, 91, 96, 0.28);
 }
 
 .button-link:hover {
@@ -294,8 +298,9 @@ footer {
   gap: 10px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: linear-gradient(120deg, var(--accent-warm) 0%, #f3b479 100%);
-  color: var(--ink);
+  background: linear-gradient(120deg, var(--accent-deep) 0%, #ef7a80 100%);
+  box-shadow: 0 12px 20px rgba(226, 91, 96, 0.24);
+  color: #fff;
   font-weight: 600;
   width: fit-content;
 }
